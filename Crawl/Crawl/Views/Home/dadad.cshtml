@@ -1,0 +1,18 @@
+﻿
+<div id='divShowInfoTag' style=' display: none;  top:-100px; left:-100px; position: fixed'>
+    <b>Css Selector:</b><br />
+    <textarea id='cssSelector'></textarea><br />
+    <div class='totaltooltip'>
+        <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='myFunction()' onmouseout='outFunc()'>
+            <span class='tooltiptext' id='myTooltip'>Copy to clipboard</span> Copy
+        </button>
+    </div>
+    <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='getFullCss();'> Full Css</button>
+    <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='AddCss();'> Append</button>
+    <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='TestCss();'> Test</button>
+    <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='ReplaceCss();'> Replace</button>
+    <button style='padding:3px 5px; background:green;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px;' onclick='ExcludeCss();'> Exclude</button>
+    <div style='float: right'>
+        <input id='myClose' type='button' value='Đóng' style='padding:3px 5px; background:#9d234c;  border:solid 1px #CCC; cursor: pointer;color: #FFF; margin: 3px' />
+    </div>
+</div>

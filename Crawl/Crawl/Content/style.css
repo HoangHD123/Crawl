@@ -1,0 +1,23 @@
+﻿#divShowInfoTag {
+    position:fixed;
+    display:none;
+    background-color:cadetblue;
+}
+#cssSelector {
+    width: 367px;
+    height: 124px;
+}
+b {
+    color: #ffffff;
+}
+button {
+    background-color:dodgerblue;
+    color:#ffffff;
+    align-content:center;
+}
+input {
+    color: #ffffff;
+}
+/*#color {
+    background-color: cadetblue;
+}*/

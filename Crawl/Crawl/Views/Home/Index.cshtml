@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/bootsrap4/css/bootstrap.min.css")
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <input id="linkcrawl" type="text" class="form-control col-md-9" value="@ViewBag.url">
+            <div class="col-sm-3">
+                <div class="row" id="color">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <label class="col-sm-4">Type</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option selected>Danh sách</option>
+                                    <option value="1">Chi tiết</option>
+                                    <option value="1">Danhh sách link</option>
+                                    <option value="1">Danhh sách tiêu đề</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5" style="padding-right:0px;">
+                        <div class="row">
+                            <label class="col-sm-5">Javascript</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option selected>Không</option>
+                                    <option>Có</option>
+                                    <option>Không</option>
+                                </select>
+                            </div>
+                            <button class="col-sm-3 btn btn-success" id="go" type="button" onclick="changeSrcIframe()">Go</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <iframe id="crawData" class="embed-responsive-item col-sm-9" src=""></iframe>
+            <div class="col-sm-3">
+                <div class="row" id="color">
+                    <div class="col-sm-12">
+                        <label for="se12">Loại dữ liệu:</label>
+                        <select class="form-control">
+                            <option selected>Title path</option>
+                            <option>Title path</option>
+                            <option>Meta discription</option>
+                            <option>Content path</option>
+                            <option>Tags</option>
+                            <option>Keywords</option>
+                            <option>Khác</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="se12">Nhập Css selector</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="se12">Thuộc tính:</label>
+                        <select class="form-control">
+                            <option selected>Text</option>
+                            <option>Text</option>
+                            <option>Html</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="se12">Excule:</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <button class="col-sm-3 btn btn-success" type="button">Thêm</button>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Thuộc tính khác:</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <button class="col-sm-3 btn btn-success" type="button">Thêm</button>
+                    </div>
+                    <div class="col-sm-12" style="margin-top:5px;">
+                        <button class="col-sm-5 btn btn-success" type="button">Lấy nội dung</button>
+                        <button class="col-sm-2 btn btn-success" type="button" style="float:right;">Hủy</button>
+                        <button class="col-sm-2 btn btn-success" type="button" style="float: right; margin-right:5px;">Tạo</button>
+
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Nội dung</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                </div>
+                <div class="row" id="color">
+                    <label class="col-sm-12">Đã chọn</label>
+                    <button class="col-sm-4 btn btn-success" type="button" style="float:right;">Test dữ liệu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
+    @Scripts.Render("~/Scripts/modernizr-2.8.3.js")
+    @Scripts.Render("~/Content/bootsrap4/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/Event.js")
+    @Styles.Render("~/Content/style.css")
+    <script>
+        if ("@ViewBag.url" != "")
+            $("#crawData").attr("src","/Home/Crawl?url=@ViewBag.url")
+        $("#linkcrawl").on("keydown", function (event) {
+            if (event.which == 13)
+                $("#go").click();
+        });
+    </script>
+</body>
+</html>
